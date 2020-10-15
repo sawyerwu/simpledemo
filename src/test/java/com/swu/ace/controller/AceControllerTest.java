@@ -41,7 +41,7 @@ public class AceControllerTest {
         assertEquals(200, status);
 
         String content = mvcResult.getResponse().getContentAsString();
-        assertEquals(content, "hello ace");
+        assertEquals("hello ace", content);
     }
 
 }
