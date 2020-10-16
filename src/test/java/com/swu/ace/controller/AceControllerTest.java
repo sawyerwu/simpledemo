@@ -4,6 +4,7 @@ package com.swu.ace.controller;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
+import org.mockito.Mockito;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.http.MediaType;
@@ -33,15 +34,15 @@ public class AceControllerTest {
 
     @Test
     public void testAce() throws Exception {
-        String uri = "/ace";
-        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get(uri)
-                .accept(MediaType.APPLICATION_JSON_VALUE)).andReturn();
+        MvcResult mvcResult = mvc.perform(MockMvcRequestBuilders.get("/ace")).andReturn();
+
 
         int status = mvcResult.getResponse().getStatus();
         assertEquals(200, status);
 
         String content = mvcResult.getResponse().getContentAsString();
         assertEquals("hello ace", content);
+
     }
 
 }
