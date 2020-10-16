@@ -17,7 +17,6 @@ public class UserController {
     @GetMapping(value = "/users")
     @ResponseBody
     public String getUsers() {
-        // JSONArray array= JSON.parseArray(JSON.toJSONString(userService.getAllUsers()));
         return JSON.toJSONString(userService.getAllUsers());
     }
 
