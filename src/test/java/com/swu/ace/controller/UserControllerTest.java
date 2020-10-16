@@ -50,7 +50,7 @@ public class UserControllerTest {
         userList = Arrays.asList(user1, user2);
     }
 
-    String allUsersResult = "[{\"name\":\"user1\",\"age\":11},{\"name\":\"user2\",\"age\":22}]";
+    String allUsersResult = "[{\"age\":11,\"name\":\"user1\"},{\"age\":22,\"name\":\"user2\"}]";
     String getUserResult = "{\"age\":11,\"name\":\"user1\"}";
 
 
