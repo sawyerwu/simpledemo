@@ -2,7 +2,6 @@ package com.swu.ace.controller;
 
 
 import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
 import com.swu.ace.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -18,8 +17,8 @@ public class UserController {
     @GetMapping(value = "/users")
     @ResponseBody
     public String getUsers() {
-        JSONArray array= JSONArray.parseArray(JSON.toJSONString(userService.getAllUsers()));
-        return array.toJSONString();
+        // JSONArray array= JSON.parseArray(JSON.toJSONString(userService.getAllUsers()));
+        return JSON.toJSONString(userService.getAllUsers());
     }
 
     @GetMapping(value = "/user/get/{name}")
